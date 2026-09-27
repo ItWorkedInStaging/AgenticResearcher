@@ -38,7 +38,7 @@ def run_local_agent(user_prompt: str):
 
     # Send the request to local hosted Llama model - explicitly pass Python function into the 'tools' parameter
     response = ollama.chat(
-        model="llama3.1",
+        model="qwen2.5:7b",
         messages=messages,
         tools=[search_web] 
     )
@@ -66,7 +66,7 @@ def run_local_agent(user_prompt: str):
         # Let the local model process the data it just searched for
         print("Local model is synthesizing search results...")
         final_response = ollama.chat(
-            model="llama3.1",
+            model="qwen2.5:7b",
             messages=messages
         )
         
